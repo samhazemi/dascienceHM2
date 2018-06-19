@@ -3,16 +3,16 @@ var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_we
 
 var query2 = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
 
-// Get Data
+
 d3.json(queryUrl, function(data) {
-  // send the data.features object to the createFeatures function
+ 
   createFeatures(data.features);
 });
 
 function createFeatures(earthquakeData) {
 
 
-  // create popup with place and time of the earthquake
+  
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.place +
       "</h3><hr><p>" + new Date(feature.properties.time) + "</p>" +
